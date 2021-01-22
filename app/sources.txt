@@ -1,0 +1,17 @@
+Sources that helped me in creating this app
+
+
+Bottom navigation
+
+    BottomNavigationView with Fragments - Android Studio Tutorial
+    https://www.youtube.com/watch?v=tPV8xA7m-iw
+
+
+
+
+Recyclerview
+
+    SQLite + Android - Display Data in RecyclerView (Book Library App) | Part 3
+    https://www.youtube.com/watch?v=VQKq9RHMS_0&lc=UgxZb_F-6dE-T_iXFJp4AaABAg
+
+    Opname recyclerview (canvas)

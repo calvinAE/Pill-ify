@@ -2,7 +2,8 @@
     <string name="app_name">Pill-ify</string>
     <string name="str_myMedication">my medication</string>
     <string name="str_searchMedication">search medication</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="str_search">Search Medication</string>
     <string name="str_titleSearch">Browse Medication</string>
+    <string name="txt_myMedication">My Medication</string>
+    <string name="str_greeting">Welcome to Pill-ify</string>
 </resources>

@@ -7,6 +7,34 @@
     android:layout_height="match_parent"
     tools:ignore="ExtraText">
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="272dp"
+        android:layout_height="42dp"
+        android:text="@string/txt_myMedication"
+        android:textAllCaps="false"
+        android:textColor="#673AB7"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/rv_myMedication"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.69"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.888" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_myMedication"
+        android:layout_width="414dp"
+        android:layout_height="671dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:listitem="@layout/medication_row" />
+
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
@@ -19,6 +47,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/nav_menu"
         tools:ignore="MissingConstraints" />
->
+
+    <Button
+        android:id="@+id/btn_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clear"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.913"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rv_myMedication"
+        app:layout_constraintVertical_bias="0.935" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
