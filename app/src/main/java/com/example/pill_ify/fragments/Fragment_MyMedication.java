@@ -63,21 +63,35 @@ public class Fragment_MyMedication extends Fragment {
                 ingredient = new ArrayList<>();
 
 
-                    storeMedication();
-                    medicationAdapter = new MedicationAdapter(getActivity(), name, description, ingredient);
-                    rvMedication.setAdapter(medicationAdapter);
-                        rvMedication.setLayoutManager(new LinearLayoutManager(view.getContext(), RecyclerView.VERTICAL, false));
+    try {
+        storeMedication();
+        medicationAdapter = new MedicationAdapter(getActivity(), name, description, ingredient);
+        rvMedication.setAdapter(medicationAdapter);
+        rvMedication.setLayoutManager(new LinearLayoutManager(view.getContext(), RecyclerView.VERTICAL, false));
+    }
+    catch (Exception e)
+    {
+        Toast.makeText(getContext(),"Add medication to your list first",Toast.LENGTH_SHORT).show();
+    }
 
 
-                        btnDelete.setOnClickListener(new View.OnClickListener() {
+                btnDelete.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        try {
                         clearDB();
+                        }
+                        catch (Exception e)
+                        {
+                            Toast.makeText(getContext(),"Medication list is already empty",Toast.LENGTH_SHORT).show();
+                        }
                     }
                 });
 
+
         return view;
     }
+        // database leegmaken
         void clearDB() {
             SQLiteDatabase medicationDB = getContext().openOrCreateDatabase("medication", Context.MODE_PRIVATE,null);
 
@@ -86,7 +100,7 @@ public class Fragment_MyMedication extends Fragment {
         }
 
 
-
+        //database data weergeven in recyclerview
         void storeMedication(){
         Cursor cursor = mDatabase.readData();
         if(cursor.getCount() == 0)

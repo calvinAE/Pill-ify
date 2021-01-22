@@ -40,8 +40,6 @@ public class Fragment_search extends Fragment  {
         Button btnSearch = view.findViewById(R.id.btn_search);
         FloatingActionButton fab = view.findViewById(R.id.btn_addMedication);
 
-        // naam ophalen
-
 
         SQLiteDatabase medicationDB = getContext().openOrCreateDatabase("medication", Context.MODE_ENABLE_WRITE_AHEAD_LOGGING,null);
 
@@ -65,6 +63,7 @@ public class Fragment_search extends Fragment  {
         return view;
     }
 
+    //
     public void onClickBtn( String searchMedication , TextView txtdrugname, TextView txtdrugdescription, TextView txtingredient)
     {
 
@@ -82,17 +81,13 @@ public class Fragment_search extends Fragment  {
 
         Medication newMedication = new Medication(newName,newDescription,newIngredient);
 
-
-        //create table if db doesn't exist
-
-
+                //indien table niet bestaat maak aan
                 medicationDB.execSQL("create table if not exists Medication(name varchar, description varchar, ingredient varchar)");
 
-        //insert query
-
+                //insert query
                 medicationDB.execSQL("insert into Medication(name,description,ingredient) values('" + newName + "','" + newDescription + "','" + newIngredient + "')");
 
-                //succesful
+                //indien succesful
                 Toast.makeText(getContext(), "Medication has been added succesfuly", Toast.LENGTH_SHORT).show();
             }
     }
